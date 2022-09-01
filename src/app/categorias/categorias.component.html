@@ -1,0 +1,24 @@
+<div class="row pad-v10">
+    <div class="col col-md-12">
+        <h2>Selecione suas preferências!</h2>
+    </div>
+</div>
+{{categoriasSelecionadas}}
+
+<div class="row pad-v10">
+    <div class="col-md-4" *ngFor="let categoria of categorias; let i = index">                      
+        <input type="checkbox" class="btn-check" id="btn-check{{categoria.categoriaID}}" value="{{categoria.categoriaID}}" autocomplete="off">
+        <label class="btn btn-dark form-control" (click)="incluirCategoria(categoria.categoriaID)" for="btn-check{{categoria.categoriaID}}">{{categoria.descricao}}</label>
+    </div>
+</div>
+<div class="row pad-v10">
+    <div class="col col-md-12">
+        <button type="button" (click)="descobreFilme()" class="btn btn-secondary">Finalizar</button>
+    </div>
+</div>
+
+
+
+
+   
+
