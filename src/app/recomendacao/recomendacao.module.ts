@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RecomendacaoComponent } from './recomendacao.component';
+import { RouterModule } from '@angular/router';
 
 
 
 @NgModule({
   declarations: [RecomendacaoComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports:[
     RecomendacaoComponent

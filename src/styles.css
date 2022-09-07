@@ -1,4 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
 .pad-v10{
-    padding-top: 10px;;
+    padding-top: 10px;
 }
+
+.mg-v10{
+    margin-top: 10px;
+}
+
+p{
+    font-size: 22px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.title{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 90px;
+    color: aliceblue;
+    border-color: black;
+    text-shadow: 2px 2px red;
+}
+
+.subTitle{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: aliceblue;
+    border-color: black;
+    text-shadow: 2px 2px gray;
+}
+
+.bt-pad{
+    padding: 20px;
+}
+
+.center{
+    text-align: center;
+}
+
+.box-light{
+    background-color: aliceblue;
+    border-radius: 10px;
+    box-shadow: inset 0 0 1em gray;
+}
+
+
+.box-dark{
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: inset 0 0 1em gray;
+}
+

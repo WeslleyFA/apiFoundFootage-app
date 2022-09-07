@@ -1,19 +1,21 @@
-<div class="row pad-v10">
-    <div class="col col-md-12">
-        <h2>Selecione suas preferências!</h2>
+<div class="center">
+    <div class="row pad-v10">
+        <div class="col col-md-12">
+            <h2 class="subTitle">Selecione suas preferências!</h2>
+        </div>
     </div>
-</div>
-{{categoriasSelecionadas}}
 
-<div class="row pad-v10">
-    <div class="col-md-4" *ngFor="let categoria of categorias; let i = index">                      
-        <input type="checkbox" class="btn-check" id="btn-check{{categoria.categoriaID}}" value="{{categoria.categoriaID}}" autocomplete="off">
-        <label class="btn btn-dark form-control" (click)="incluirCategoria(categoria.categoriaID)" for="btn-check{{categoria.categoriaID}}">{{categoria.descricao}}</label>
+
+    <div class="row pad-v10 p-3  bg-opacity-10 border border-dark box-light">
+        <div class="col-md-3" style="padding: 5px;" *ngFor="let categoria of categorias; let i = index">                      
+            <input type="checkbox" class="btn-check" id="btn-check{{categoria.categoriaID}}" value="{{categoria.categoriaID}}" autocomplete="off">
+            <label class="btn bt-pad btn-light btn-lg form-control" (click)="incluirCategoria(categoria.categoriaID)" for="btn-check{{categoria.categoriaID}}">{{categoria.descricao}}</label>
+        </div>
     </div>
-</div>
-<div class="row pad-v10">
-    <div class="col col-md-12">
-        <button type="button" (click)="descobreFilme()" class="btn btn-secondary">Finalizar</button>
+    <div class="row pad-v10">
+        <div class="col col-md-12">
+            <button type="button" (click)="descobreFilme()" class="btn btn-secondary">Finalizar</button>
+        </div>
     </div>
 </div>
 

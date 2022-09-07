@@ -1,7 +1,28 @@
-<div class="row pad-v10">
+
+<br>
+<div class="row p-3 bg-opacity-10 border border-dark  box-dark center">
     <div class="col col-md-12">
-        {{filmeRecebido.nome}}
-        <br>
-        <img src="{{filmeRecebido.imgUrl}}"/>
+        <h1 class="title">{{filmeRecebido.nome}}</h1>
+        
+        <div class="row">
+            <div class="col-md-12">
+                <img src="{{filmeRecebido.imgUrl}}" height="600px" width="450px"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">              
+                <label class="subTitle">Sinopse:</label>
+                <p class="sinopse">{{filmeRecebido.sinopse}}</p>              
+            </div>
+        </div>
+
+        
+
+        <div class="row pad-v10">
+            <div class="col-md-12">
+                <button routerLink="/categorias" class="btn btn-secondary">Voltar</button>
+            </div>
+        </div>
+
     </div>
 </div>
