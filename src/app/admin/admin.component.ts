@@ -29,4 +29,11 @@ export class AdminComponent implements OnInit {
     this.categoriasSelecionadas.push(categoria)  
   }
 
+  onSubmit(){
+    this.filme.categorias = this.categoriasSelecionadas
+    this.filmeService
+    .postFilme(this.filme)
+    .subscribe(resposta => console.log(resposta));
+  }
+
 }

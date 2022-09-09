@@ -1,3 +1,16 @@
 .sinopse{
     color: crimson;
 }
+
+@keyframes vai-volta {
+    0% {
+        transform: translateX(-400%);
+    }
+    100% {
+        transform: translateX(400%);
+    }
+}
+
+.loading {
+    animation: vai-volta 3s infinite alternate;
+}

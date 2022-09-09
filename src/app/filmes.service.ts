@@ -23,4 +23,8 @@ export class FilmesService {
     return this.http.post<Number>('http://localhost:8080/filme/recomenda', categoriasIDs )
   }
  
+  postFilme(filme : Filme):Observable<Filme>{
+    return this.http.post<Filme>('http://localhost:8080/filme', filme )
+  }
+ 
 }

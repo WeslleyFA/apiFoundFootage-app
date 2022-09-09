@@ -13,15 +13,15 @@ import { Categoria } from './categoria';
 export class CategoriasComponent implements OnInit {
   categorias : Categoria[] = [];
   categoriasSelecionadas : Number[] = [];
- 
 
   constructor(private filmeService: FilmesService, private router : Router){
    
   }
 
+
   incluirCategoria(numero: Number){
     this.categoriasSelecionadas.push(numero)
-
+    //this.categoriasSelecionadas = [... new Set(this.categoriasSelecionadas)]
   }
 
   descobreFilme(){
@@ -29,9 +29,6 @@ export class CategoriasComponent implements OnInit {
     .postPegaRecomendacao(this.categoriasSelecionadas)
     .subscribe(resp =>  this.router.navigate([`/recomendacao`,resp]));
     
-   
- 
-
   }
 
   ngOnInit(): void {
@@ -42,3 +39,4 @@ export class CategoriasComponent implements OnInit {
   }
 
 }
+

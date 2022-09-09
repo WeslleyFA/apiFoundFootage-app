@@ -1,6 +1,12 @@
 
 <br>
-<div class="row p-3 bg-opacity-10 border border-dark  box-dark center">
+
+
+<div class="p-3 bg-opacity-10 border border-dark  box-light center" *ngIf="tempo < 5">
+    <img class="loading" src="assets/img/tape.jpg" width="10%">
+</div>
+
+<div class="row p-3 bg-opacity-10 border border-dark  box-dark center" *ngIf="tempo >= 5">
     <div class="col col-md-12">
         <h1 class="title">{{filmeRecebido.nome}}</h1>
         

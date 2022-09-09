@@ -4,42 +4,45 @@
     </div>
 </div>
 
-<div class="row pad-v10 p-3 bg-opacity-10 border border-dark  rounded form" style="color: white;">
-    <div class="col-md-12">
-        <div class="panel">
-            <div class="row">
-                <div class="col-md-6">
-                    <label for="nome">Nome: </label>
-                    <input type="text" name="filme.nome" id="nome" class="form-control">
+<form #formFilme="ngForm"  (ngSubmit)="onSubmit()">
+    <div class="row pad-v10 p-3 bg-opacity-10 border border-dark  rounded form" style="color: white;">
+        <div class="col-md-12">
+            <div class="panel">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="nome">Nome: </label>
+                        <input type="text" [(ngModel)]="filme.nome" name="nome" id="nome" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="nome">Link da Imagem (Capa): </label>
+                        <input type="text" [(ngModel)]="filme.imgUrl" name="imgUrl" id="nome" class="form-control">
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <label for="nome">Link da Imagem (Capa): </label>
-                    <input type="text"  name="filme.imgUrl" id="nome" class="form-control">
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="sinopse">Sinopse: </label>
+                        <textarea  class="form-control" name="" [(ngModel)]="filme.sinopse" name="sinopse" id="sinopse" cols="30" rows="4"></textarea>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <label for="sinopse">Sinopse: </label>
-                    <textarea  class="form-control" name="" id="sinopse" cols="30" rows="4"></textarea>
+                <div class="row pad-v10">
+                    <label for="categorias">Categorias:</label>
+                    <div class="col-md-3 p-3" id="categorias" *ngFor="let categoria of categorias; let i = index">                      
+                        <input type="checkbox" class="btn-check" id="btn-check{{categoria.categoriaID}}" value="{{categoria.categoriaID}}" autocomplete="off">
+                        <label class="btn btn-light form-control" (click)="incluirCategoria(categoria.categoriaID)" for="btn-check{{categoria.categoriaID}}">{{categoria.descricao}}</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row pad-v10">
-                <label for="categorias">Categorias:</label>
-                <div class="col-md-3 p-3" id="categorias" *ngFor="let categoria of categorias; let i = index">                      
-                    <input type="checkbox" class="btn-check" id="btn-check{{categoria.categoriaID}}" value="{{categoria.categoriaID}}" autocomplete="off">
-                    <label class="btn btn-light form-control" (click)="incluirCategoria(categoria.categoriaID)" for="btn-check{{categoria.categoriaID}}">{{categoria.descricao}}</label>
+                <div class="row pad-v10">
+                    <div class="col-md-3">
+                        <button class="btn btn-primary btn-lg">Enviar</button>
+                    </div>               
                 </div>
-            </div>
-            <div class="row pad-v10">
-                <div class="col-md-3">
-                    <button class="btn btn-primary btn-lg">Enviar</button>
-                </div>               
-            </div>
-            <div class="col-md-3 p-3" id="categorias" *ngFor="let categoria of categoriasSelecionadas;">            
-                {{categoria.categoriaID}}    
+                <div class="col-md-3 p-3" id="categorias" *ngFor="let categoria of categoriasSelecionadas;">            
+                    {{categoria.categoriaID}}    
+                </div>
             </div>
         </div>
     </div>
-</div>
+    
+</form>
 
 

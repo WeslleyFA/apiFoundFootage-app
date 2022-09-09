@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { $ } from 'protractor';
-import { Observable } from 'rxjs';
+import { interval, Observable } from 'rxjs';
 import { FilmesService } from '../filmes.service';
 import { Filme } from './filme';
 
@@ -13,6 +13,7 @@ import { Filme } from './filme';
 export class RecomendacaoComponent implements OnInit {
   filmeRecebido : Filme;
   filmeID : number = 0;
+  tempo : number = 0;
   
   constructor(private filmeService: FilmesService, private route: ActivatedRoute){
     this.filmeRecebido = new Filme();
@@ -23,6 +24,11 @@ export class RecomendacaoComponent implements OnInit {
       params.subscribe( urlParams => this.filmeID = urlParams['filmeID']);
       this.filmeService.getFilmeSugerido(this.filmeID)
       .subscribe(resposta => this.filmeRecebido = resposta);    
+
+      var obs$ = interval(1000)
+      obs$.subscribe(
+        resp => this.tempo = resp
+      )
     
    }
 }
