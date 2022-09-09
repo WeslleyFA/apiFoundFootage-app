@@ -8,23 +8,24 @@ import { Filme } from './recomendacao/filme';
   providedIn: 'root'
 })
 export class FilmesService {
+  baseUrl : String = 'http://ec2-15-228-224-177.sa-east-1.compute.amazonaws.com:8080/';
 
   constructor( private http : HttpClient) { }
 
   getCategorias():Observable<Categoria[]>{
-    return this.http.get<Categoria[]>('http://localhost:8080/categorias');
+    return this.http.get<Categoria[]>(this.baseUrl + 'categorias');
   }
 
   getFilmeSugerido(filmeID : number):Observable<Filme>{
-    return this.http.get<Filme>('http://localhost:8080/filme/'+ filmeID);
+    return this.http.get<Filme>(this.baseUrl + 'filme/'+ filmeID);
   }
 
   postPegaRecomendacao(categoriasIDs : Number[]):Observable<Number>{
-    return this.http.post<Number>('http://localhost:8080/filme/recomenda', categoriasIDs )
+    return this.http.post<Number>(this.baseUrl + 'filme/recomenda', categoriasIDs )
   }
  
   postFilme(filme : Filme):Observable<Filme>{
-    return this.http.post<Filme>('http://localhost:8080/filme', filme )
+    return this.http.post<Filme>(this.baseUrl + 'filme', filme )
   }
  
 }
