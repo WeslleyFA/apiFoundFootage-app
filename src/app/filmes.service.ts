@@ -8,7 +8,7 @@ import { Filme } from './recomendacao/filme';
   providedIn: 'root'
 })
 export class FilmesService {
-  baseUrl : String = 'http://82.180.162.78:8080/';
+  baseUrl : String = 'https://82.180.162.78:8443/';
 
   constructor( private http : HttpClient) { }
 
