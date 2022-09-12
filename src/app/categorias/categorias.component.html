@@ -5,8 +5,14 @@
         </div>
     </div>
 
+    <div class="p-3 bg-opacity-10 border border-dark  box-light " *ngIf="categorias.length == 0">     
+        <div class="d-flex align-items-center">
+            <strong>Carregando Categorias...</strong>
+            <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+        </div>       
+    </div>
 
-    <div class="row pad-v10 p-3  bg-opacity-10 border border-dark box-light">
+    <div class="row pad-v10 p-3  bg-opacity-10 border border-dark box-light" *ngIf="categorias.length > 0">
         <div class="col-md-3" style="padding: 5px;" *ngFor="let categoria of categorias; let i = index">                      
             <input type="checkbox" class="btn-check" id="btn-check{{categoria.categoriaID}}" value="{{categoria.categoriaID}}" autocomplete="off">
             <label class="btn bt-pad btn-light btn-lg form-control" (click)="incluirCategoria(categoria.categoriaID)" for="btn-check{{categoria.categoriaID}}">{{categoria.descricao}}</label>
