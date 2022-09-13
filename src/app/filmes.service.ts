@@ -8,7 +8,7 @@ import { Filme } from './recomendacao/filme';
   providedIn: 'root'
 })
 export class FilmesService {
-  baseUrl : String = 'https://82.180.162.78:8443/';
+  baseUrl : String = 'https://api.findfootage.tech/';
 
   constructor( private http : HttpClient) { }
 
