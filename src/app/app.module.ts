@@ -13,6 +13,7 @@ import { RecomendacaoComponent } from './recomendacao/recomendacao.component';
 import { RecomendacaoModule } from './recomendacao/recomendacao.module';
 import { AdminComponent } from './admin/admin.component';
 import { AdminModule } from './admin/admin.module';
+import { FilmesModule } from './admin/filmes/filmes.module';
 
 
 
@@ -28,7 +29,8 @@ import { AdminModule } from './admin/admin.module';
     NavbarModule, 
     CategoriasModule,
     RecomendacaoModule,
-    AdminModule
+    AdminModule, 
+    FilmesModule
   ],
   providers: [
     FilmesService

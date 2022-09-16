@@ -1,0 +1,27 @@
+<div class="row p-3 bg-opacity-10 border border-dark box-dark">
+    <div class="col-md-12">
+        <div class="content">
+            <div class="row">
+                <div class="col ">
+                    <button routerLink="/cadastro" class="btn btn-dark float-end">Novo Filme</button>
+                </div>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Filme</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let filme of filmes">
+                        <td>{{filme.nome}}</td>
+                        <td class="center">
+                            <button routerLink="/edicao/{{filme.filmeID}}" class="btn btn-dark">Editar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>       
+    </div>
+</div>

@@ -3,7 +3,7 @@
         <h1>Administrador</h1>
     </div>
 </div>
-{{filme.sinopse}}
+
 <form #formFilme="ngForm"  (ngSubmit)="onSubmit()">
     <div class="row pad-v10 p-3 bg-opacity-10 border border-dark  rounded form" style="color: white;">
         <div class="col-md-12">
@@ -34,12 +34,12 @@
                 <div class="row pad-v10">
                     <div class="col-md-3">
                         <button class="btn btn-primary btn-lg">Enviar</button>
+                        <input type="button" class="btn btn-secondary btn-lg m-2" routerLink="/filmes/63e98cef325a7cdb1522b35e84b6a600a64f7785" value="Voltar">
                     </div>               
                 </div>              
             </div>
         </div>
-    </div>
-    
+    </div>   
 </form>
 
 
