@@ -14,6 +14,7 @@ import { RecomendacaoModule } from './recomendacao/recomendacao.module';
 import { AdminComponent } from './admin/admin.component';
 import { AdminModule } from './admin/admin.module';
 import { FilmesModule } from './admin/filmes/filmes.module';
+import { SugestaoModule } from './sugestao/sugestao.module';
 
 
 
@@ -30,7 +31,8 @@ import { FilmesModule } from './admin/filmes/filmes.module';
     CategoriasModule,
     RecomendacaoModule,
     AdminModule, 
-    FilmesModule
+    FilmesModule, 
+    SugestaoModule
   ],
   providers: [
     FilmesService

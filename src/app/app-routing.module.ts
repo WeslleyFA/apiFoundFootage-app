@@ -5,6 +5,7 @@ import { FilmesComponent } from './admin/filmes/filmes.component';
 import { CategoriasComponent } from './categorias/categorias.component';
 import { HomeComponent } from './home/home.component';
 import { RecomendacaoComponent } from './recomendacao/recomendacao.component';
+import { SugestaoComponent } from './sugestao/sugestao.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: "recomendacao/:filmeID", component: RecomendacaoComponent},
   {path: "cadastro", component: AdminComponent},
   {path: "edicao/:filmeID", component: AdminComponent},
-  {path: "filmes/63e98cef325a7cdb1522b35e84b6a600a64f7785", component: FilmesComponent}
+  {path: "filmes/63e98cef325a7cdb1522b35e84b6a600a64f7785", component: FilmesComponent},
+  {path: "sugestao", component: SugestaoComponent}
 ];
 
 @NgModule({

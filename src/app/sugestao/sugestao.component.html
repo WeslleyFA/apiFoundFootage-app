@@ -1,0 +1,70 @@
+<div class="row center">
+    <div class="col-m2-12">
+        <h1 class="title">Enviar Sugestão</h1>
+    </div>
+</div>
+
+
+<div class="container" *ngIf="!sugestaoEnviada">
+    <form #formSugestao="ngForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="row pad-v10 p-3 bg-opacity-10 border border-dark box-light rounded form">
+                <div class="col-md-12">
+                    <div class="panel">
+                        <div class="row">
+                            <div class="col-md-11">
+                                <label for="nome">Nome: </label>
+                                <input type="text" [(ngModel)]="campoSugestao" name="campoSugestao" id="nome" class="form-control">
+                            </div>
+                            <div class="col-md-1">
+                                <input type="button" (click)="validaSugestao()" class="form-control btn btn-dark alinha" value="Validar">
+                            </div>
+                        </div>
+                        <div class="row pad-v10" *ngIf="sugestaoValida != null">
+                            <div class="col-md-12">
+                                <div *ngIf="sugestaoValida" class="alert alert-success" role="alert">
+                                    Sugestão Válida!
+                                </div>
+                                <div *ngIf="!sugestaoValida"class="alert alert-danger" role="alert">
+                                    {{mensagemInvalida}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container" *ngIf="sugestaoValida">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="descricao">Do que se trata o filme?</label>
+                                    <textarea class="form-control" name="" [(ngModel)]="sugestao.descricao" name="descricao" id="descricao" cols="30" rows="4"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="email">Deixe seu email, caso o filme seja aprovado, você será notificado(a)</label>
+                                    <input type="email" class="form-control" name="" [(ngModel)]="sugestao.sugeridoPor" name="sugeridoPor" id="email">
+                                </div>
+                            </div>
+                            <div class="row pad-v10">
+                                <div class="col-md-12">                           
+                                    <input type="submit" class="btn btn-dark" value="Enviar">
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="container" *ngIf="sugestaoEnviada">
+    <div class="row pad-v10 p-3 bg-opacity-10 border border-dark box-light rounded form">
+        <div class="col-md-12 center">
+            <img src="assets/img/validado.png" width="300px">
+        </div>
+        <div class="col-md-12 center">
+            <p class="title" style="color: black;">Sugestão enviada para aprovação, em breve você será notificado(a) caso tenha deixado seu email.</p>
+        </div>
+    </div>
+</div>
+
